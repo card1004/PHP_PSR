@@ -56,7 +56,7 @@ class PasswordGenerator
         $length   = (0 === (int)$number)
             ? self::$passwordDefaultLength
             : (0 === (int)$number)
-                ?self::$passwordDefaultLength
+                ? self::$passwordDefaultLength
                 : (int)$number;
         $password = $char = '';
 
