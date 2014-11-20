@@ -47,9 +47,9 @@ class PasswordGenerator
     {
 
         if(fasle === in_array($strength, [
-            self::PASSWORD_EASY ,
-            self::PASSWORD_MEDIUM ,
-            self::PASSWORD_HARD ,
+            self::PASSWORD_EASY,
+            self::PASSWORD_MEDIUM,
+            self::PASSWORD_HARD,
         ]))
             throw new \Exception('Bad strength!');
 
