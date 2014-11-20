@@ -39,13 +39,12 @@ class PasswordGenerator
      * @param null $number
      * @param int $strength
      *
-     * @return string
+     * @return string|null
      *
      * @throws \Exception
      */
     public static  function getRandomString($number = null, $strength = self::PASSWORD_MEDIUM)
     {
-        $number = (is_null($number)) ? self::$passwordDefaultLength : (int)$number;
 
         if(fasle === in_array($strength, [
             self::PASSWORD_EASY,
