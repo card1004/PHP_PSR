@@ -47,20 +47,19 @@ class PasswordGenerator
     {
         $number = (is_null($number)) ? self::$passwordDefaultLength : (int)$number;
 
-        if(!in_array($strength, [
+        if(fasle === in_array($strength, [
             self::PASSWORD_EASY,
             self::PASSWORD_MEDIUM,
             self::PASSWORD_HARD,
         ]))
             throw new \Exception('Bad strength!');
 
-        $length = (is_null($number))
+        $length   = (is_null === $number)
             ? self::$passwordDefaultLength
             : (0 === (int)$number)
                 ?self::$passwordDefaultLength
                 : (int)$number;
-
-        $password=$char='';
+        $password = $char = '';
 
         switch($strength){
             case self::PASSWORD_EASY :
@@ -75,9 +74,9 @@ class PasswordGenerator
 
         if (is_int($number)){
             for ($i = 0; $i < $length; $i++){
-                $password .=mb_substr($char, mt_rand(0,(mb_strlen($char)-1)), 1);
+                $password .=mb_substr($char, mt_rand(0,(mb_strlen($char) - 1)), 1);
             }
             return $password;
         }
     }
-} 
+}
